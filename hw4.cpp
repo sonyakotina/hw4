@@ -3,34 +3,34 @@
 using namespace std;
 int main()
 {
-    double a = 4.8, b = -7.9, m, n;
-    m = 1;
-    n = 1;
+    double a = 4.6, b = 1.5, y, t;
+    y = 1;
+    t = 1;
 
-    if (a >= b)
+    if (a <= b)
     {
-        n = pow(a - b, 1.0/ 3);
+        y = ((a-b)/(a+b))*((a+b)/(pow(a,2)-a*b-pow(b,2)));
     }
     else
     {
-        n = pow(a, 2) + ((a - b) / sin(a * b));
+        y = a+log(pow(b,2));
     }
 
-    if (n < b)
+    if (y == b)
     {
-        m = ((n + a) / -b) + sqrt(pow(sin(a), 2) - cos(n));
+        t = (2*y+sqrt(pow(y,2)-a))/(2*b+sqrt(pow(a,2)-y));
     }
-    else if (n==b)
+    else if (y < b)
     {
-        m = pow(b, 2) + tan(n * a);
+        t = pow(sin(y),2) + (1/tan(a-b));
     }
     else
     {
-        m = pow(b, 3) + n * pow(a, 2);
+        t = pow((y*sin(a)), 1.0/3) + (1/(sqrt(y*cos(b))));
     }
     
     cout << "a: " << a << " "
         << "b: " << b << " "
-        << "m: " << m << " "
-        << "n: " << n << " ";
+        << "y: " << y << " "
+        << "t: " << t << " ";
 }
